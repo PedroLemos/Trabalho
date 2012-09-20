@@ -1,0 +1,9 @@
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\bin\Debug\Trabalho1.exe
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\bin\Debug\Trabalho1.pdb
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.Form1.resources
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.Properties.Resources.resources
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.exe
+C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.pdb
