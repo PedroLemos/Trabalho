@@ -7,3 +7,12 @@ C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.read.1.
 C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.exe
 C:\Users\IFSP\Desktop\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.pdb
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.exe
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.pdb
+F:\PJS\Trabalho1\Trabalho1\bin\Debug\Trabalho1.exe
+F:\PJS\Trabalho1\Trabalho1\bin\Debug\Trabalho1.pdb
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.Form1.resources
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\Trabalho1.Properties.Resources.resources
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\PJS\Trabalho1\Trabalho1\obj\x86\Debug\GenerateResource.write.1.tlog

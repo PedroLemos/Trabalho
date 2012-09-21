@@ -52,6 +52,14 @@
             this.checkBoxBuscaLocal = new System.Windows.Forms.CheckBox();
             this.checkBoxBuscaGenero = new System.Windows.Forms.CheckBox();
             this.checkBoxBuscaNome = new System.Windows.Forms.CheckBox();
+            this.listViewDados = new System.Windows.Forms.ListView();
+            this.columnNomeFilme = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnGenero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalAssistido = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnDataAssistida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonPesquisar = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.buttonRemover = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
             this.tabPageBusca.SuspendLayout();
@@ -112,6 +120,8 @@
             // 
             // tabPageCadastro
             // 
+            this.tabPageCadastro.Controls.Add(this.buttonRemover);
+            this.tabPageCadastro.Controls.Add(this.buttonEditar);
             this.tabPageCadastro.Controls.Add(this.buttonCadLimpar);
             this.tabPageCadastro.Controls.Add(this.buttonCadCadastrar);
             this.tabPageCadastro.Controls.Add(this.comboBoxCadGenero);
@@ -132,7 +142,7 @@
             // 
             // buttonCadLimpar
             // 
-            this.buttonCadLimpar.Location = new System.Drawing.Point(427, 110);
+            this.buttonCadLimpar.Location = new System.Drawing.Point(423, 110);
             this.buttonCadLimpar.Name = "buttonCadLimpar";
             this.buttonCadLimpar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadLimpar.TabIndex = 9;
@@ -141,16 +151,27 @@
             // 
             // buttonCadCadastrar
             // 
-            this.buttonCadCadastrar.Location = new System.Drawing.Point(328, 110);
+            this.buttonCadCadastrar.Location = new System.Drawing.Point(150, 110);
             this.buttonCadCadastrar.Name = "buttonCadCadastrar";
             this.buttonCadCadastrar.Size = new System.Drawing.Size(75, 23);
             this.buttonCadCadastrar.TabIndex = 8;
             this.buttonCadCadastrar.Text = "Cadastrar";
             this.buttonCadCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadCadastrar.Click += new System.EventHandler(this.buttonCadCadastrar_Click);
             // 
             // comboBoxCadGenero
             // 
             this.comboBoxCadGenero.FormattingEnabled = true;
+            this.comboBoxCadGenero.Items.AddRange(new object[] {
+            "Ação",
+            "Aventura",
+            "Comédia",
+            "Terror",
+            "Suspense",
+            "Documentario",
+            "Infantil",
+            "Romance",
+            "Ficção Ciêntifica"});
             this.comboBoxCadGenero.Location = new System.Drawing.Point(377, 23);
             this.comboBoxCadGenero.Name = "comboBoxCadGenero";
             this.comboBoxCadGenero.Size = new System.Drawing.Size(121, 21);
@@ -173,6 +194,7 @@
             // 
             // tabPageBusca
             // 
+            this.tabPageBusca.Controls.Add(this.buttonPesquisar);
             this.tabPageBusca.Controls.Add(this.label6);
             this.tabPageBusca.Controls.Add(this.label5);
             this.tabPageBusca.Controls.Add(this.dateTimePickerBuscaData2);
@@ -191,11 +213,12 @@
             this.tabPageBusca.TabIndex = 1;
             this.tabPageBusca.Text = "Busca";
             this.tabPageBusca.UseVisualStyleBackColor = true;
+            this.tabPageBusca.Click += new System.EventHandler(this.tabPageBusca_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(386, 90);
+            this.label6.Location = new System.Drawing.Point(391, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(22, 13);
             this.label6.TabIndex = 10;
@@ -204,7 +227,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(274, 90);
+            this.label5.Location = new System.Drawing.Point(279, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 13);
             this.label5.TabIndex = 9;
@@ -214,7 +237,7 @@
             // 
             this.dateTimePickerBuscaData2.Enabled = false;
             this.dateTimePickerBuscaData2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBuscaData2.Location = new System.Drawing.Point(414, 87);
+            this.dateTimePickerBuscaData2.Location = new System.Drawing.Point(419, 81);
             this.dateTimePickerBuscaData2.Name = "dateTimePickerBuscaData2";
             this.dateTimePickerBuscaData2.Size = new System.Drawing.Size(79, 20);
             this.dateTimePickerBuscaData2.TabIndex = 8;
@@ -223,7 +246,7 @@
             // 
             this.dateTimePickerBuscaData1.Enabled = false;
             this.dateTimePickerBuscaData1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBuscaData1.Location = new System.Drawing.Point(301, 87);
+            this.dateTimePickerBuscaData1.Location = new System.Drawing.Point(306, 81);
             this.dateTimePickerBuscaData1.Name = "dateTimePickerBuscaData1";
             this.dateTimePickerBuscaData1.Size = new System.Drawing.Size(79, 20);
             this.dateTimePickerBuscaData1.TabIndex = 7;
@@ -231,16 +254,16 @@
             // textBoxBuscaLocal
             // 
             this.textBoxBuscaLocal.Enabled = false;
-            this.textBoxBuscaLocal.Location = new System.Drawing.Point(19, 87);
+            this.textBoxBuscaLocal.Location = new System.Drawing.Point(19, 81);
             this.textBoxBuscaLocal.Name = "textBoxBuscaLocal";
-            this.textBoxBuscaLocal.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBuscaLocal.Size = new System.Drawing.Size(215, 20);
             this.textBoxBuscaLocal.TabIndex = 6;
             // 
             // comboBoxBuscaGenero
             // 
             this.comboBoxBuscaGenero.Enabled = false;
             this.comboBoxBuscaGenero.FormattingEnabled = true;
-            this.comboBoxBuscaGenero.Location = new System.Drawing.Point(277, 29);
+            this.comboBoxBuscaGenero.Location = new System.Drawing.Point(282, 27);
             this.comboBoxBuscaGenero.Name = "comboBoxBuscaGenero";
             this.comboBoxBuscaGenero.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBuscaGenero.TabIndex = 5;
@@ -248,7 +271,7 @@
             // textBoxBuscaNome
             // 
             this.textBoxBuscaNome.Enabled = false;
-            this.textBoxBuscaNome.Location = new System.Drawing.Point(19, 29);
+            this.textBoxBuscaNome.Location = new System.Drawing.Point(19, 27);
             this.textBoxBuscaNome.Name = "textBoxBuscaNome";
             this.textBoxBuscaNome.Size = new System.Drawing.Size(215, 20);
             this.textBoxBuscaNome.TabIndex = 4;
@@ -256,7 +279,7 @@
             // checkBoxBuscaData
             // 
             this.checkBoxBuscaData.AutoSize = true;
-            this.checkBoxBuscaData.Location = new System.Drawing.Point(277, 66);
+            this.checkBoxBuscaData.Location = new System.Drawing.Point(282, 62);
             this.checkBoxBuscaData.Name = "checkBoxBuscaData";
             this.checkBoxBuscaData.Size = new System.Drawing.Size(93, 17);
             this.checkBoxBuscaData.TabIndex = 3;
@@ -267,7 +290,7 @@
             // checkBoxBuscaLocal
             // 
             this.checkBoxBuscaLocal.AutoSize = true;
-            this.checkBoxBuscaLocal.Location = new System.Drawing.Point(19, 66);
+            this.checkBoxBuscaLocal.Location = new System.Drawing.Point(19, 62);
             this.checkBoxBuscaLocal.Name = "checkBoxBuscaLocal";
             this.checkBoxBuscaLocal.Size = new System.Drawing.Size(96, 17);
             this.checkBoxBuscaLocal.TabIndex = 2;
@@ -278,7 +301,7 @@
             // checkBoxBuscaGenero
             // 
             this.checkBoxBuscaGenero.AutoSize = true;
-            this.checkBoxBuscaGenero.Location = new System.Drawing.Point(277, 9);
+            this.checkBoxBuscaGenero.Location = new System.Drawing.Point(282, 9);
             this.checkBoxBuscaGenero.Name = "checkBoxBuscaGenero";
             this.checkBoxBuscaGenero.Size = new System.Drawing.Size(61, 17);
             this.checkBoxBuscaGenero.TabIndex = 1;
@@ -297,14 +320,79 @@
             this.checkBoxBuscaNome.UseVisualStyleBackColor = true;
             this.checkBoxBuscaNome.CheckedChanged += new System.EventHandler(this.checkBoxBuscaNome_CheckedChanged);
             // 
+            // listViewDados
+            // 
+            this.listViewDados.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnNomeFilme,
+            this.columnGenero,
+            this.columnLocalAssistido,
+            this.columnDataAssistida});
+            this.listViewDados.FullRowSelect = true;
+            this.listViewDados.Location = new System.Drawing.Point(12, 193);
+            this.listViewDados.Name = "listViewDados";
+            this.listViewDados.Size = new System.Drawing.Size(528, 231);
+            this.listViewDados.TabIndex = 6;
+            this.listViewDados.UseCompatibleStateImageBehavior = false;
+            this.listViewDados.View = System.Windows.Forms.View.Details;
+            // 
+            // columnNomeFilme
+            // 
+            this.columnNomeFilme.Text = "Nome do Filme";
+            this.columnNomeFilme.Width = 215;
+            // 
+            // columnGenero
+            // 
+            this.columnGenero.Text = "Gênero";
+            this.columnGenero.Width = 95;
+            // 
+            // columnLocalAssistido
+            // 
+            this.columnLocalAssistido.Text = "Local Assistido";
+            this.columnLocalAssistido.Width = 134;
+            // 
+            // columnDataAssistida
+            // 
+            this.columnDataAssistida.Text = "Data Assistida";
+            this.columnDataAssistida.Width = 80;
+            // 
+            // buttonPesquisar
+            // 
+            this.buttonPesquisar.Location = new System.Drawing.Point(423, 110);
+            this.buttonPesquisar.Name = "buttonPesquisar";
+            this.buttonPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.buttonPesquisar.TabIndex = 11;
+            this.buttonPesquisar.Text = "Pesquisar";
+            this.buttonPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Location = new System.Drawing.Point(241, 110);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 10;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemover
+            // 
+            this.buttonRemover.Location = new System.Drawing.Point(332, 110);
+            this.buttonRemover.Name = "buttonRemover";
+            this.buttonRemover.Size = new System.Drawing.Size(75, 23);
+            this.buttonRemover.TabIndex = 11;
+            this.buttonRemover.Text = "Remover";
+            this.buttonRemover.UseVisualStyleBackColor = true;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 436);
+            this.Controls.Add(this.listViewDados);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPageCadastro.PerformLayout();
@@ -340,6 +428,14 @@
         private System.Windows.Forms.TextBox textBoxBuscaLocal;
         private System.Windows.Forms.ComboBox comboBoxBuscaGenero;
         private System.Windows.Forms.TextBox textBoxBuscaNome;
+        private System.Windows.Forms.Button buttonPesquisar;
+        private System.Windows.Forms.ListView listViewDados;
+        private System.Windows.Forms.ColumnHeader columnNomeFilme;
+        private System.Windows.Forms.ColumnHeader columnGenero;
+        private System.Windows.Forms.ColumnHeader columnLocalAssistido;
+        private System.Windows.Forms.ColumnHeader columnDataAssistida;
+        private System.Windows.Forms.Button buttonRemover;
+        private System.Windows.Forms.Button buttonEditar;
     }
 }
 
